@@ -6,12 +6,14 @@ import {PersistGate} from 'redux-persist/integration/react';
 import {ApolloProvider} from "react-apollo";
 import {createHttpLink} from "apollo-link-http";
 import {InMemoryCache} from "apollo-cache-inmemory";
-import {ApolloClient, gql} from "apollo-boost";
+import {ApolloClient} from "apollo-boost";
 
 import {persistor, store} from './redux/store';
 
 import './index.css';
 import App from './App';
+
+import {resolvers, typeDefs} from "./graphql/resolvers";
 
 
 // To create a connection to Backend
@@ -25,7 +27,17 @@ const cache = new InMemoryCache();
 // For client
 const client = new ApolloClient({
     link: httpLink,
-    cache
+    cache,
+    typeDefs,
+    resolvers
+});
+
+client.writeData({
+    data: {
+        cartHidden: true,
+        cartItems: [],
+        itemCount: 0
+    }
 });
 
 ReactDOM.render(
