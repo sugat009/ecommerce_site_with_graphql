@@ -1,6 +1,7 @@
 import React from 'react';
 import {Mutation, Query} from "react-apollo";
 import {gql} from "apollo-boost";
+
 import CartDropdown from "./cart-dropdown.component";
 
 // Mutation changes the data inside either the database or the local state

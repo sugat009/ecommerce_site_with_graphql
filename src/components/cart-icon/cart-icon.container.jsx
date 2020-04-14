@@ -30,7 +30,7 @@ const CartIconContainer = ({data: {itemCount}, toggleCartHidden}) => {
 // wrapping component
 // The query output is given as {data:}
 // whereas the mutation is given not as the name mentioned in the mutation definition but
-// as mutate so below code needes a configuration to change the name to our preferred name
+// as mutate so below code needs a configuration to change the name to our preferred name
 export default flowRight(
     graphql(GET_ITEM_COUNT),
     graphql(TOGGLE_CART_HIDDEN, {name: 'toggleCartHidden'})

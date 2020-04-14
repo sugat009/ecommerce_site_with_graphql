@@ -9,12 +9,10 @@ import {InMemoryCache} from "apollo-cache-inmemory";
 import {ApolloClient} from "apollo-boost";
 
 import {persistor, store} from './redux/store';
+import {resolvers, typeDefs} from "./graphql/resolvers";
 
 import './index.css';
 import App from './App';
-
-import {resolvers, typeDefs} from "./graphql/resolvers";
-
 
 // To create a connection to Backend
 const httpLink = createHttpLink({
