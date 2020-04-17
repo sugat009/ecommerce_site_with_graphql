@@ -19,7 +19,7 @@ const AppContainer = () => {
     return (
         <Query query={GET_CURRENT_USER}>
             {
-                ({currentUser}) => (
+                ({data: {currentUser}}) => (
                     <Mutation mutation={SET_CURRENT_USER}>
                         {
                             setCurrentUser => (
