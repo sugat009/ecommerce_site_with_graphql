@@ -29,5 +29,4 @@ const CollectionItem = ({item, addItem}) => {
     );
 };
 
-
 export default CollectionItem;

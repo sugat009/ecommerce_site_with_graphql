@@ -10,9 +10,10 @@ import {ApolloClient} from "apollo-boost";
 
 import {persistor, store} from './redux/store';
 import {resolvers, typeDefs} from "./graphql/resolvers";
+import {default as data} from "./graphql/initial-data";
 
 import './index.css';
-import App from './App';
+import {default as App} from "./App/App.container";
 
 // To create a connection to Backend
 const httpLink = createHttpLink({
@@ -31,11 +32,7 @@ const client = new ApolloClient({
 });
 
 client.writeData({
-    data: {
-        cartHidden: true,
-        cartItems: [],
-        itemCount: 0
-    }
+    data
 });
 
 ReactDOM.render(

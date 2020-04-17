@@ -7,6 +7,7 @@ import Header from "./header.component";
 const GET_CART_HIDDEN = gql`
     {
         cartHidden @client
+        currentUser @client
     }
 `;
 
@@ -14,7 +15,10 @@ const HeaderContainer = () => {
     return (
         <Query query={GET_CART_HIDDEN}>
             {
-                ({data: {cartHidden}}) => <Header hidden={cartHidden}/>
+                ({data: {cartHidden, currentUser}}) => <Header
+                    hidden={cartHidden}
+                    currentUser={currentUser}
+                />
             }
         </Query>
     );
